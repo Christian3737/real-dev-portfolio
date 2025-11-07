@@ -55,43 +55,45 @@ All colors MUST be HSL.
 
   .dark {
     /* Dark theme - Azul profundo elegante */
-    --background: 222 47% 8%;
+    --background: 222 47% 5%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%;
+    --card: 222 47% 9%;
     --card-foreground: 210 40% 98%;
 
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 221 83% 53%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
     
-    --primary-glow: 221 83% 63%;
+    --primary-glow: 217 91% 70%;
 
-    --secondary: 217 33% 17%;
+    --secondary: 217 33% 15%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 33% 17%;
+    --muted: 217 33% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 221 83% 53%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 221 83% 53%;
+    --border: 217 33% 15%;
+    --input: 217 33% 15%;
+    --ring: 217 91% 60%;
     
     /* Gradientes dark */
-    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 63%));
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 53% / 0.15), hsl(221 83% 63% / 0.08));
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.15), hsl(217 91% 70% / 0.08));
+    --gradient-contact: linear-gradient(180deg, hsl(222 47% 5%), hsl(217 91% 15%));
     
     /* Sombras dark */
-    --shadow-soft: 0 2px 20px -5px hsl(221 83% 53% / 0.3);
-    --shadow-card: 0 4px 24px -8px hsl(221 83% 53% / 0.4);
+    --shadow-soft: 0 2px 20px -5px hsl(217 91% 60% / 0.3);
+    --shadow-card: 0 4px 24px -8px hsl(217 91% 60% / 0.4);
+    --shadow-glow: 0 0 30px hsl(217 91% 60% / 0.5);
   }
 }
 
