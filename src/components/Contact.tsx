@@ -20,8 +20,8 @@ const Contact = () => {
     {
       icon: Instagram,
       label: "Instagram",
-      value: "@aesthetic_webdesign",
-      link: "https://instagram.com/aesthetic_webdesign",
+      value: "@christianizidoro.dev",
+      link: "https://instagram.com/christianizidoro.dev",
       color: "text-pink-400",
     },
     {
