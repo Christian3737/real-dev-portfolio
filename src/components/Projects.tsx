@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import projectVidracaria from "@/assets/project-vidracaria.jpg";
 import projectLanding from "@/assets/project-landing.jpg";
 import projectPortfolio from "@/assets/project-portfolio.jpg";
 
 /* Seção de projetos com animações */
 const Projects = () => {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -42,7 +44,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4">
-            Meus <span className="gradient-text">Projetos</span>
+            {t("Meus", "My")} <span className="gradient-text">{t("Projetos", "Projects")}</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-primary mx-auto mb-12 rounded-full"></div>
         </motion.div>
@@ -79,7 +81,7 @@ const Projects = () => {
                   asChild
                 >
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    Ver Projeto
+                    {t("Ver Projeto", "View Project")}
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>

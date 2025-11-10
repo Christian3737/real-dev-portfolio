@@ -1,13 +1,24 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import profileImage from "@/assets/foto.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /* Seção hero com apresentação principal - Layout moderno */
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToProjetos = () => {
     const element = document.querySelector("#projetos");
     element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleDownloadCV = () => {
+    // Cria um link temporário para download
+    const link = document.createElement('a');
+    link.href = '/curriculo.pdf'; // Você precisará adicionar o PDF em public/
+    link.download = 'Christian_Izidoro_CV.pdf';
+    link.click();
   };
 
   return (
@@ -39,13 +50,13 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h2 className="text-2xl lg:text-3xl text-muted-foreground mb-2">
-                Olá, eu sou
+                {t("Olá, eu sou", "Hello, I'm")}
               </h2>
               <h1 className="text-5xl lg:text-7xl font-bold mb-4">
                 <span className="gradient-text">Christian Izidoro</span>
               </h1>
               <p className="text-2xl lg:text-3xl text-foreground/90 font-medium">
-                Desenvolvedor Front-End
+                {t("Desenvolvedor Front-End", "Front-End Developer")}
               </p>
             </motion.div>
 
@@ -55,21 +66,34 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg lg:text-xl text-muted-foreground leading-relaxed"
             >
-              Transformando ideias em interfaces modernas e funcionais.
+              {t(
+                "Transformando ideias em interfaces modernas e funcionais.",
+                "Transforming ideas into modern and functional interfaces."
+              )}
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-wrap gap-4"
             >
               <Button
                 size="lg"
                 onClick={scrollToProjetos}
                 className="bg-gradient-primary hover:opacity-90 hover:shadow-glow transition-all duration-300 shadow-soft group"
               >
-                Ver Projetos
+                {t("Ver Projetos", "View Projects")}
                 <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={handleDownloadCV}
+                className="border-primary/30 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all group"
+              >
+                <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
+                {t("Baixar Currículo", "Download CV")}
               </Button>
             </motion.div>
           </div>

@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /* Header com navegação e menu mobile */
 const Header = () => {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -17,10 +20,10 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Sobre", href: "#sobre" },
-    { name: "Habilidades", href: "#habilidades" },
-    { name: "Projetos", href: "#projetos" },
-    { name: "Contato", href: "#contato" },
+    { name: t("Sobre", "About"), href: "#sobre" },
+    { name: t("Habilidades", "Skills"), href: "#habilidades" },
+    { name: t("Projetos", "Projects"), href: "#projetos" },
+    { name: t("Contato", "Contact"), href: "#contato" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -56,11 +59,13 @@ const Header = () => {
                 {link.name}
               </button>
             ))}
+            <LanguageToggle />
             <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
+            <LanguageToggle />
             <ThemeToggle />
             <Button
               variant="ghost"

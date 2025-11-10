@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-/* Rodapé do site */
+/* Rodapé com assinatura */
 const Footer = () => {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -16,7 +18,7 @@ const Footer = () => {
           transition={{ duration: 0.5 }}
           className="text-foreground/80 font-medium"
         >
-          © 2025 Christian Izidoro — Desenvolvedor Front-End
+          © 2025 Christian Izidoro — {t("Desenvolvedor Front-End", "Front-End Developer")}
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -24,7 +26,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-sm text-muted-foreground italic font-['Dancing_Script',cursive]"
         >
-          Desenvolvido por Christian Izidoro
+          {t("Desenvolvido por", "Developed by")} Christian Izidoro
         </motion.p>
       </div>
     </footer>
