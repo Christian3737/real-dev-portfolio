@@ -16,8 +16,8 @@ const Hero = () => {
   const handleDownloadCV = () => {
     // Cria um link temporário para download
     const link = document.createElement('a');
-    link.href = '/curriculo.pdf'; // Você precisará adicionar o PDF em public/
-    link.download = 'Christian_Izidoro_CV.pdf';
+    link.href = '/Christian_Curriculo.pdf'; // Você precisará adicionar o PDF em public/
+    link.download = 'Christian_Izidoro.pdf';
     link.click();
   };
 

@@ -5,8 +5,8 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import projectVidracaria from "@/assets/project-vidracaria.jpg";
-import projectLanding from "@/assets/project-landing.jpg";
-import projectPortfolio from "@/assets/project-portfolio.jpg";
+import projectHats from "@/assets/projectHats.png";
+import projectPortfolio from "@/assets/project-portfolio.png";
 
 /* Seção de projetos com animações */
 const Projects = () => {
@@ -15,27 +15,45 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const projects = [
-    {
+       {
       title: "Site para Vidraçaria",
-      description: "Website moderno para empresa de vidros e espelhos",
+      description: "Website moderno para empresa de vidros e espelhos. Apresenta os serviços, botão fixo para WhatsApp, galeria e layout totalmente responsivo.",
       image: projectVidracaria,
-      link: "#",
+      link: "https://mellifluous-haupia-70d64b.netlify.app/",
     },
+
     {
-      title: "Landing Page",
-      description: "Landing page responsiva com design clean",
-      image: projectLanding,
-      link: "#",
-    },
+    
+  title: "Loja de Chapéus",
+  description: "Landing page moderna e responsiva desenvolvida para uma loja de chapéus, com design elegante, animações suaves e integração com Instagram e WhatsApp.",
+  image: projectHats, // nome da imagem que você vai importar
+  link: "htr-hats.netlify.app", // coloca o link do site quando estiver hospedado
+},
+
     {
-      title: "Portfólio Pessoal",
-      description: "Portfólio profissional e interativo",
-      image: projectPortfolio,
-      link: "#",
+
+
+
+
+
+
+
+
+
+    title: "Portfólio Pessoal",
+    description: "Desenvolvi meu portfólio moderno e responsivo para apresentar minhas habilidades como desenvolvedor front-end. Inclui modo claro/escuro, animações com Framer Motion e troca de idioma (PT/EN).",
+    image: projectPortfolio,
+    link: "#",
     },
   ];
 
-  return (
+
+
+
+
+
+
+return (
     <section id="projetos" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl" ref={ref}>
         <motion.div
